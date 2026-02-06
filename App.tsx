@@ -1,14 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
 import {NavigationContainer, NavigationContainerRefContext} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { HomeScreen } from './src/screen/HomeScreen';
-import { SecondScreen } from './src/screen/SecondScreen';
+import { HomeScreen } from './src/screnss/HomeScreen';
+import { SecondScreen } from './src/screnss/SecondScreen';
 
 
 type RootStackParamList = {
   Home: undefined;
-  Second: undefined;
+  Second: { mensagem: string };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

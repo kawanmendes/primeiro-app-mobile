@@ -2,16 +2,15 @@ import React from "react";
 import { View ,Text ,StyleSheet, Button} from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-type RootStackParamList = {Home: undefined;Second: undefined;};
+type RootStackParamList = {Home: undefined;Second: {mensagem: string};};
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export const HomeScreen = ({ navigation }: Props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Conteúdo da tela inicial</Text>
-      <Button title="Ir para a segunda tela" onPress={() => navigation.navigate("Second")} 
-        
-        />
+      <Button title="Ir para a segunda tela" 
+       onPress={() => navigation.navigate('Second', { mensagem: 'Olá da tela inicial!' })} />
     </View>
   );
 };
